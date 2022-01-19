@@ -1019,11 +1019,11 @@
         <div class="row">
           <div class="col-3">
             <label for="id_ref_accommodation_type">Tipe of course<span>*</span></label>
-            <select onclick="startContineu()" name="accommodation_type" class="form-control" required="" id="continuew_option">
+            <select onchange="startContineu()" name="accommodation_type" class="form-control" required="" id="continuew">
 
               <option  selected="Host family">.......</option>
 
-            <option id="option1" value="0">. continuew </option> 
+            <option id="option1"name="continuew" value="0">. continuew </option> 
 
               <option id="option2" value="1">. Start</option>
 
@@ -1045,14 +1045,14 @@
           
     <!-- show height colam weith accommodation_type -->
 
-       <div class="col-2 " id="">
+       <div class="col-2 " id="Summar_Start" style="display:none;">
             <div class="form-group">
              <label>Summar Start<span style="color:red;">*</span></label></label>
              <input type="date" class="form-control"/>
              
            </div>
           </div>
-          <div class="col-2 " id="summerend">
+          <div class="col-2 " id="Summar_End" style="display:none;">
             <div class="form-group">
              <label>Summar End<span style="color:red;">*</span></label></label>
               <input type="date" class="form-control"/>
@@ -1198,7 +1198,7 @@
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.2.0-rc
     </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">nqraa.com</a>.</strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->
@@ -1228,6 +1228,18 @@
 
 
 <script type="text/javascript">
+// start and continew option 
+function startContineu() {
+    if(document.getElementById('continuew').value == "0") {
+        document.getElementById('Summar_Start').style.display = 'none';
+        document.getElementById('Summar_End').style.display = 'none';
+
+    } else {
+        document.getElementById('Summar_Start').style.display = 'block';
+        document.getElementById('Summar_End').style.display = 'block';
+    }
+}
+//....................................
   $(document).ready(function(){
 // time picker
   $('.timepicker').qcTimepicker();
@@ -1286,22 +1298,6 @@ tableChild++;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// function deleteRow(row)
-// {
-//     var i=row.parentNode.parentNode.rowIndex;
-//     document.getElementById('MyTable').deleteRow(i);
-// }
-
- 
-//     let count =0;
-//     document.getElementById("ssss").innerHTML +='<tr class="item"> <td><input type="text"name="rel_ref_school_school_course-0-min_weak" class="formset-field form-control disabled" id="id_rel_ref_school_school_course-'+count+'-min_weak">   </td> <td>   <input  type="text" value="" name="rel_ref_school_school_course-1-max_weak" class="formset-field form-control" id="id_rel_ref_school_school_course-'+count+'-max_weak">    </td>  <td>  <div class="input-group">    <div class="input-group-prepend">     <span class="input-group-text">GBP</span> </div>   <input type="text" name="rel_ref_school_school_course-2-price" class="formset-field form-control" id="id_rel_ref_school_school_course-0-price">    </div>   </td>  <td>    <button onclick="deleteRow(this)" type="button" class="btn btn-danger btn-sm remove-form-row" id="rel_ref_school_school_course">     Delete  </button>    </td>   </tr>'
-
-// let week = $("#id_rel_ref_school_school_course-"+count+"-max_weak").val();
-// console.log(week)
-// let weekone =$("#id_rel_ref_school_school_course-"+count+"-min_weak").val(week +1)
-// count++;
-
-// console.log(count ,"count")
 
 
   
@@ -1313,54 +1309,10 @@ tableChild++;
 
 
 
-// function insRow() {
-//     //////
-//   console.log('hi i am new row');
-//   var x = document.getElementById('MyTable');
-//   var new_row = x.rows[1].cloneNode(true);
-
-//   //row value
-//   // len = x.rows.length;
-//   var len = x.rows;
-
-//   new_row.cells[0].innerHTML = len;
-//   var weekvalue =$("#MyTable").find("#id_rel_ref_school_school_course-0-max_weak").last().val()
-//   const inputVal = "1"
-//  const week = $("#id_rel_ref_school_school_course-0-max_weak");
-//  var res=+  weekvalue  + 1;
-
-// const maxweek ;
-// maxweek = res
-// len = maxweek
 
 
- //console.log(res,'value +1')
-//console.log(weekvalue.parseFloat(inputVal)  ,'hhhh')
-//console.log(week , 'fine')
-
-
-
-  //var inp1 = new_row.cells[1].getElementsByTagName('input')[0];
-  //console.log(inp1 , 'hello')
   
- // inp1.id += res  ;
-  //inp1.value = '';
-  //inp1.value =+ res;
 
-  //var inp2 = new_row.cells[2].getElementsByTagName('input')[0];
-
- // inp2.id += len;
-  //inp2.value = '' ;
-  //inp2.value =+res ;
-  //console.log(  inp2.value ,'kkkkk')
- // x.appendChild(new_row);
-//}
-
-/*function e(e){
- // const courceValue = e.target.value
-  console.log(e)
- 
-}*/
 </script>
 </body>
 </html>

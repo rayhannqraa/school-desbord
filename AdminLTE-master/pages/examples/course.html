@@ -1,0 +1,700 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<title>Course Detail</title>
+
+  	<!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+   <!-- time picker css-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.min.css" integrity="sha256-SMGbWcp5wJOVXYlZJyAXqoVWaE/vgFA5xfrH3i/jVw0=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js" integrity="sha256-5YmaxAwMjIpMrVlK84Y/+NjCpKnFYa8bWWBbUHSBGfU=" crossorigin="anonymous"></script>
+  
+<!-- <link rel="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.13.18/jquery.timepicker.min.css">
+   <link rel="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.13.18/jquery.timepicker.css"> -->
+  <!-- Theme style -->
+  <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet">
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+
+
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+	<div class="wrapper">
+
+	  	
+	
+<!-- Preloader -->
+  	<div class="preloader flex-column justify-content-center align-items-center">
+    	<img class="animation__shake" src="/static/admin/dist/img/AdminLTELogo.png" alt="Admin Logo" height="60" width="60">
+  	</div>
+
+  	<!-- Navbar -->
+  	<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+	    <!-- Left navbar links -->
+	    <ul class="navbar-nav">
+	      <li class="nav-item">
+	        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+	      </li>
+	      <li class="nav-item d-none d-sm-inline-block">
+	        <a href="" class="nav-link">Home</a>
+	      </li>
+	    </ul>
+
+	    <!-- Right navbar links -->
+	    <ul class="navbar-nav ml-auto">
+	      
+	      <li class="nav-item">
+	        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+	          <i class="fas fa-expand-arrows-alt"></i>
+	        </a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+	          <i class="fas fa-th-large"></i>
+	        </a>
+	      </li>
+	    </ul>
+  	</nav>
+<!-- /.navbar -->
+    
+
+<!-- Main Sidebar Container -->
+  	<aside class="main-sidebar sidebar-dark-primary elevation-4">
+	    <!-- Brand Logo -->
+	    
+			
+	    <a href="/dashboard" class="brand-link">
+	      <img src="/static/admin/dist/img/AdminLTELogo.png" alt="Admin Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+	      <span class="brand-text font-weight-light">Courseprice</span>
+	    </a>
+	    	
+	    
+
+	    <!-- Sidebar -->
+	    <div class="sidebar">
+	      	<!-- Sidebar user panel (optional) -->
+	      	<div class="user-panel mt-3 pb-3 mb-3 d-flex">
+	    
+			
+		    	<div class="image">
+		          <img src="/static/admin/dist/img/avatar.png" class="img-circle elevation-2" alt="User Image">
+		        </div>
+		        
+		        <div class="info">
+		          <a href="#" class="d-block">Rashadul Islam</a>
+		        </div>
+		    
+		
+
+	      	</div>
+	      	<!-- Sidebar Menu -->
+	      	<nav class="mt-2">
+		        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+			      	<!-- Add icons to the links using the .nav-icon class
+			           with font-awesome or any other icon font library -->
+			        
+			      	<li class="nav-item menu-open">
+				        <a href="/dashboard"  class="nav-link" >
+				          <i class="nav-icon fas fa-tachometer-alt"></i>
+				        <p>Dashboard</p>
+				        </a>
+			      	</li>
+			      	
+			      		
+			        
+			        
+		          	
+			        
+		          	
+
+		          	
+		          		
+			        
+
+			        
+			        
+			        
+						
+			        
+			        
+						
+			        
+			        
+						
+							
+					<li class="nav-item">
+			            <a href="/dashboard/school-application-list/5"   class="nav-link" >
+			              <i class="nav-icon fas fa-address-book"></i>
+			              <p>
+			                Application
+			              </p>
+			            </a>
+			        </li>
+			        <li class="nav-item">
+			            <a href="/dashboard/school-detail/63" class="nav-link">
+			              <i class="nav-icon fas fa-address-book"></i>
+			              <p>
+			                School Detail
+			              </p>
+			            </a>
+			        </li>
+
+			        
+						
+			        
+			        
+			      	<li class="nav-item">
+				        <a href="/logout"  class="nav-link" >
+				          <i class="nav-icon fas fa-power-off"></i>
+				        <p>Logout</p>
+				        </a>
+			      	</li>
+		        </ul>
+	      	</nav>
+	      	<!-- /.sidebar-menu -->
+	    </div>
+	    <!-- /.sidebar -->
+  	</aside>
+        
+
+	<!-- Content Wrapper. Contains page content -->
+  	<div class="content-wrapper">
+    	<!-- Content Header (Page header) -->
+    	<div class="content-header">
+	      	<div class="container-fluid">
+
+	      		<div class="row">
+          <div class="col-md-3">
+
+            <!-- About School -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Course Detail</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <strong><i class="fas fa-school mr-1"></i> Saud Demo school</strong>
+
+                <p class="text-muted">
+                  
+                </p>
+
+                <hr>
+                <strong><i class="fas fa-building mr-1"></i> Organization </strong>
+
+                <p class="text-muted">
+                  Kaplan International
+                </p>
+
+                <hr>
+
+                <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
+
+                <p class="text-muted"> Liverpool, UK. </p>
+
+                <hr>
+
+                <strong><i class="fas fa-envelope mr-1"></i> Email</strong>
+
+                <p class="text-muted">
+                  racel@nqraa.com
+                </p>
+                <hr>
+
+                <strong><i class="fas fa-money-bill mr-1"></i> Currency</strong>
+
+                <p class="text-muted">
+                  GBP
+                </p>
+                
+
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+          <div class="col-md-9">
+            <div class="card">
+              <div class="card-header p-2">
+                <ul class="nav nav-pills">
+                  <li class="nav-item"><a class="nav-link active" href="#accommodation" data-toggle="tab">Add Room</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#activity" data-toggle="tab">Add Teacher</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">add Casual</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#schedule" data-toggle="tab">Add Student</a></li>
+                  <!-- <li class="nav-item"><a class="nav-link" href="#room" data-toggle="tab">Room</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#level" data-toggle="tab">Level</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#type" data-toggle="tab">Type</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#teacher" data-toggle="tab">Teacher</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#student" data-toggle="tab">Student</a></li>
+                   -->
+                </ul>
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                <div class="tab-content">
+                  <div class="active tab-pane" id="accommodation">
+                    <!-- Post -->
+                    <div class="post">   
+                      <div class="user-block">
+                      
+                        
+                        Add Room
+                        <a href="/dashboard/add-school-accommodation-owner/63" class="btn-tool"><i class="fas fa-plus"></i></a>
+                        
+                      
+                      </div>
+                      <!-- /.user-block -->
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th class="text-left">Accommodation Type</th>
+                            <th class="text-center">Owner name </th>
+                            <th class="text-center">Address</th>
+                            <th class="text-center">City</th>
+                            <th class="text-center">Country</th>
+                            <th class="text-center">Postal code</th>
+                            <th class="text-center">Email</th>
+                            <th class="text-center">Phone</th>
+                            <th class="text-center">Note</th>
+                            
+                            <th class="text-right">Action</th>
+                          </tr>
+                          
+                          <tr>
+                            <td class="text-left">
+                              Host family
+                            
+                            </td>
+                            <td class="text-left">
+                              
+                                Rashadul Islam
+                              
+
+                            </td>
+                            <td class="text-center">Demo address</td>
+                            <td class="text-center">Liverpool</td>
+                            <td class="text-center">UK</td>
+                            <td class="text-center">12834</td>
+                            <td class="text-center">rashadul756@gmail.com</td>
+                            <td class="text-center">0509867963</td>
+                            <td class="text-center">This  is demo test</td>
+                            <td class="text-right">
+                              <a class="btn btn-primary btn-sm" href="/dashboard/detail-school-accommodation-owner/1">
+                                <i class="fas fa-folder">
+                                </i>
+                                Detail
+                              </a>
+                            </td>
+                          </tr>
+                          
+                          <tr>
+                            <td class="text-left">
+                              Host family
+                            
+                            </td>
+                            <td class="text-left">
+                              
+                                saa dd
+                              
+
+                            </td>
+                            <td class="text-center">ray</td>
+                            <td class="text-center">riy</td>
+                            <td class="text-center">sau</td>
+                            <td class="text-center">sd123</td>
+                            <td class="text-center">s@s.com</td>
+                            <td class="text-center">0566667894</td>
+                            <td class="text-center">no</td>
+                            <td class="text-right">
+                              <a class="btn btn-primary btn-sm" href="/dashboard/detail-school-accommodation-owner/2">
+                                <i class="fas fa-folder">
+                                </i>
+                                Detail
+                              </a>
+                            </td>
+                          </tr>
+                          
+                          
+                          
+                       
+                          
+                        </thead>  
+                      </table>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="activity">
+                    <!-- Post -->
+                    <div class="post">
+                      <div class="user-block">
+                        
+                          
+                          Add Teacher
+                          <a href="/dashboard/add-school-service/63" class="btn-tool"><i class="fas fa-plus"></i></a>
+                          
+                        
+                      </div>
+                      <!-- /.user-block -->
+
+                      
+                      	<table class="table">
+                      		<thead>
+                      			<tr>
+                      				<th class="text-left">Service Name</th>
+                      				<th class="text-center">Service Type</th>
+                      				<th class="text-center">Price</th>
+                              
+                                
+                      				<th class="text-right">Action</th>
+                                
+                              
+                      			</tr>
+                      		</thead>
+                      		
+                      		<tr>
+                      			<td class="text-left"> b </td>
+                      			<td class="text-center"> One Time </td>
+                      			<td class="text-center"> GBP 44.00 </td>
+
+                            
+                              
+                      			<td class="project-actions text-right">
+                      				
+			                        <a class="btn btn-info btn-sm" href="/dashboard/edit-school-service/14">
+			                            <i class="fas fa-pencil-alt">
+			                            </i>
+			                            Edit
+			                          </a>
+			                          <a class="btn btn-danger btn-sm" href="/dashboard/delete-school-service/14">
+			                            <i class="fas fa-trash">
+			                            </i>
+			                            Delete
+			                          </a>
+                      			</td>
+                              
+                            
+                      		</tr>
+                      		
+                      		<tr>
+                      			<td class="text-left"> a </td>
+                      			<td class="text-center"> Per Week </td>
+                      			<td class="text-center"> GBP 120.00 </td>
+
+                            
+                              
+                      			<td class="project-actions text-right">
+                      				
+			                        <a class="btn btn-info btn-sm" href="/dashboard/edit-school-service/13">
+			                            <i class="fas fa-pencil-alt">
+			                            </i>
+			                            Edit
+			                          </a>
+			                          <a class="btn btn-danger btn-sm" href="/dashboard/delete-school-service/13">
+			                            <i class="fas fa-trash">
+			                            </i>
+			                            Delete
+			                          </a>
+                      			</td>
+                              
+                            
+                      		</tr>
+                      		
+                      	</table>
+                    </div>
+                    <!-- /.post -->
+                  </div>
+                  <!-- /.tab-pane -->
+                  <div class="tab-pane" id="timeline">
+                    <!-- The timeline -->
+                    <!-- Post -->
+                    <div class="post">
+                      <div class="user-block">
+                        
+                          
+                          Add schedule
+                          <a href="/dashboard/add-school-course/63" class="btn-tool"><i class="fas fa-plus"></i></a>
+                          
+                        
+                      </div>
+                      <!-- /.user-block -->
+
+                      	
+                      	<table class="table">
+                      		<thead>
+                      			<tr style="background: #DDDDDD;">
+                      				<th class="text-left">Course Name</th>
+                              
+                                
+                      				<th class="text-right">Action</th>
+                                
+                              
+                      			</tr>
+                      		</thead>
+                      		
+                      		<tr>
+                      			<td class="text-left"> Frinsh </td>
+                            
+                              
+                      			<td class="project-actions text-right">
+		                        	<a class="btn btn-info btn-sm" href="/dashboard/edit-school-course/7">
+		                            	<i class="fas fa-pencil-alt"></i> Edit
+		                          	</a>
+		                          	<a class="btn btn-danger btn-sm" href="/dashboard/delete-school-course/7">
+		                            	<i class="fas fa-trash"></i> Delete
+		                          	</a>
+                      			</td>
+                              
+                            
+                      		</tr>
+                      		
+                      		
+                      		<tr>
+
+                      			<table class="table">
+                      				<thead>
+                      					<tr>
+                      						<th class="text-left">
+                      							Min week
+                      						</th>
+                      						<th class="text-center">
+                      							Max week
+                      						</th>
+                      						
+                      						<th class="text-right">
+                      							Price(Per week)
+                      						</th>
+                      					</tr>
+                      				</thead>
+                      				<tbody>
+                      					
+                      					<tr>
+                      						<td class="text-left">1</td>
+                      						<td class="text-center">12</td>
+                      						<td class="text-right">GBP  200.00</td>
+                      						
+                      					</tr>
+                      					
+                      					<tr>
+                      						<td class="text-left">13</td>
+                      						<td class="text-center">24</td>
+                      						<td class="text-right">GBP  170.00</td>
+                      						
+                      					</tr>
+                      					
+                      				</tbody>
+                      			</table>
+                      		</tr>
+                      		
+                      	</table>
+                      	
+                      	<table class="table">
+                      		<thead>
+                      			<tr style="background: #DDDDDD;">
+                      				<th class="text-left">Course Name</th>
+                              
+                                
+                      				<th class="text-right">Action</th>
+                                
+                              
+                      			</tr>
+                      		</thead>
+                      		
+                      		<tr>
+                      			<td class="text-left"> Genarel Eng </td>
+                            
+                              
+                      			<td class="project-actions text-right">
+		                        	<a class="btn btn-info btn-sm" href="/dashboard/edit-school-course/9">
+		                            	<i class="fas fa-pencil-alt"></i> Edit
+		                          	</a>
+		                          	<a class="btn btn-danger btn-sm" href="/dashboard/delete-school-course/9">
+		                            	<i class="fas fa-trash"></i> Delete
+		                          	</a>
+                      			</td>
+                              
+                            
+                      		</tr>
+                      		
+                      		
+                      	</table>
+                      	
+                      	<table class="table">
+                      		<thead>
+                      			<tr style="background: #DDDDDD;">
+                      				<th class="text-left">Course Name</th>
+                              
+                                
+                      				<th class="text-right">Action</th>
+                                
+                              
+                      			</tr>
+                      		</thead>
+                      		
+                      		<tr>
+                      			<td class="text-left"> ddd </td>
+                            
+                              
+                      			<td class="project-actions text-right">
+		                        	<a class="btn btn-info btn-sm" href="/dashboard/edit-school-course/10">
+		                            	<i class="fas fa-pencil-alt"></i> Edit
+		                          	</a>
+		                          	<a class="btn btn-danger btn-sm" href="/dashboard/delete-school-course/10">
+		                            	<i class="fas fa-trash"></i> Delete
+		                          	</a>
+                      			</td>
+                              
+                            
+                      		</tr>
+                      		
+                      		
+                      		<tr>
+
+                      			<table class="table">
+                      				<thead>
+                      					<tr>
+                      						<th class="text-left">
+                      							Min week
+                      						</th>
+                      						<th class="text-center">
+                      							Max week
+                      						</th>
+                      						
+                      						<th class="text-right">
+                      							Price(Per week)
+                      						</th>
+                      					</tr>
+                      				</thead>
+                      				<tbody>
+                      					
+                      					<tr>
+                      						<td class="text-left">1</td>
+                      						<td class="text-center">5</td>
+                      						<td class="text-right">GBP  100.00</td>
+                      						
+                      					</tr>
+                      					
+                      				</tbody>
+                      			</table>
+                      		</tr>
+                      		
+                      	</table>
+                      	
+                    </div>
+                    <!-- /.post -->
+                  </div>
+                  <!-- /.tab-pane -->
+                  <div class="tab-pane" id="schedule">
+                    <!-- The timeline -->
+                    <!-- Post -->
+                    <div class="post">
+                      <div class="user-block">
+                        
+                          
+                          Add Student
+                          <a href="/dashboard/add-school-schedule/63" class="btn-tool"><i class="fas fa-plus"></i></a>
+                          
+                        
+                      </div>
+                      <!-- /.user-block -->
+
+                        
+                        <table class="table">
+                          <thead>
+                            <tr style="">
+                              <th class="text-left">Start Time</th>
+                              <th class="text-left">End Time</th>
+                              
+                                
+                              <th class="text-right">Action</th>
+                                
+                              
+                            </tr>
+                          </thead>
+                          
+                          <tr>
+                            <td class="text-left"> 10:00 a.m. </td>
+                            <td class="text-left"> 12:00 p.m. </td>
+                            
+                              
+                            <td class="project-actions text-right">
+                                                  
+                              <a class="btn btn-info btn-sm" href="/dashboard/edit-school-schedule/1">
+                                  <i class="fas fa-pencil-alt"></i> Edit
+                                </a>
+                                <a class="btn btn-danger btn-sm" href="/dashboard/delete-school-schedule/1">
+                                  <i class="fas fa-trash"></i> Delete
+                                </a>
+                            </td>
+                              
+                            
+                          </tr>
+                          
+                          
+                        </table>
+                        
+                    </div>
+                    <!-- /.post -->
+                  </div>
+                  <!-- /.tab-pane -->
+
+              
+          
+                </div>
+                <!-- /.tab-content -->
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+
+	      	</div>
+	    </div>
+    	<!-- /.content -->
+  	</div>
+
+
+
+
+    
+<!-- /.content-wrapper -->
+  	<footer class="main-footer">
+    	<strong>Copyright &copy; 2021 <a href="">nqraa.com</a>.</strong>
+    	All rights reserved.
+    	<div class="float-right d-none d-sm-inline-block">
+      	<b>Version</b> 1.1.0
+    	</div>
+  	</footer>
+
+
+	    
+
+	    
+		<!-- Control Sidebar -->
+		<!-- /.control-sidebar -->
+	</div>
+	<!-- ./wrapper -->
+
+	<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+ <!-- jquery time picker js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.13.18/jquery.timepicker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.13.18/jquery.timepicker.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.js"></script> -->
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+    
+</body>
+</html>

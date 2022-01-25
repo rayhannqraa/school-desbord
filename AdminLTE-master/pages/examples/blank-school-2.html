@@ -10,9 +10,10 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
    <!-- time picker css-->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.min.css" integrity="sha256-SMGbWcp5wJOVXYlZJyAXqoVWaE/vgFA5xfrH3i/jVw0=" crossorigin="anonymous" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js" integrity="sha256-5YmaxAwMjIpMrVlK84Y/+NjCpKnFYa8bWWBbUHSBGfU=" crossorigin="anonymous"></script>
-  
+
 <!-- <link rel="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.13.18/jquery.timepicker.min.css">
    <link rel="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.13.18/jquery.timepicker.css"> -->
   <!-- Theme style -->
@@ -1005,13 +1006,13 @@
               <label for="id_ref_accommodation_type">Started time<span>*</span></label>
               <!-- <input type="text" name="started_time" class="form-control" required="" id="picker1">   -->
               <br/>
-              <input style="width:15rem" type="time" class="timepicker p-1" id="demo" required />
+              <input style="width:15rem" type="start-time" placeholder="00:00:00" class="timepicker p-1" id="demo" required />
             </div>
             <div class="col-3">
               <label for="id_ref_accommodation_type">End Time<span>*</span></label>
               <!-- <input type="text" name="end_time" class="form-control" required="" id="picker2">   -->
               <br/>
-              <input style="width:15rem" type="time" class="timepicker p-1" id="demo" required />
+              <input style="width:15rem" type="end-time" placeholder="00:00:00" class="timepicker p-1" id="demo" required />
             </div>
         
       </div>
@@ -1107,7 +1108,7 @@
                     <input type="number" value = "" name="rel_ref_school_school_course-0-min_weak" class="formset-field form-control disabled" id="id_rel_ref_school_school_course-0-min_weak">
                 </td>
                 <td>
-                  <input  type="number" value="" name="rel_ref_school_school_course-1-max_weak" class="formset-field form-control" id="id_rel_ref_school_school_course-0-max_weak">
+                  <input  type="number" value="" name="rel_ref_school_school_course-1-max_weak" class="formset-field form-control" id="max_weak_value">
                 </td>
                 <td>
                      
@@ -1137,7 +1138,7 @@
 
     <tr>
       <td colspan="9" style="border-left: none!important; border-right: none !important; border-bottom: none!important;">
-          <button onClick="insRow()" type="button" class="btn btn-md btn-success add-form-row" id="rel_ref_school_school_course">
+          <button onClick="insRow()" type="button" class="btn btn-md btn-success add-form-row " id="btn_school_course">
              Add
           </button>
       </td>
@@ -1219,11 +1220,14 @@
 <script src="../../plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
- <!-- jquery time picker js -->
+ <!--  time picker js -->
+ <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.13.18/jquery.timepicker.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.13.18/jquery.timepicker.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.js"></script>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 <!-- AdminLTE App -->
 <script src="../../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
@@ -1243,12 +1247,20 @@ function startContineu() {
     }
 }
 //....................................
-  $(document).ready(function(){
-// time picker
-  $('.timepicker').qcTimepicker();
+ 
+//time picker
+config ={
+  enableTime: true,
+    noCalendar: true,
+    dateFormat: "H:i:S",
+    time_24hr: true
+}
+//start time
+flatpickr("input[type=start-time]", config);
 
 
-  })
+//end time
+flatpickr("input[type=end-time]", config);
 
 ///////////colam show height
   
@@ -1256,7 +1268,7 @@ function startContineu() {
 
 
 let tableChild = 1
-
+let updatevalue = ''
 function deleteRow(row)
 {
  tableChild--;
@@ -1269,41 +1281,60 @@ function deleteRow(row)
 function insRow() {
 
  //console.log('hi i am new row');
-var x = document.getElementById('MyTable');
-var new_row = x.rows[1].cloneNode(true);
+        var x = document.getElementById('MyTable');
+        var new_row = x.rows[1].cloneNode(true);
+        let mybtn = document.querySelector("#btn_school_course").disabled = true;
 
-const input = document.querySelector("#MyTable > tbody > tr:nth-child("+ tableChild +") > td:nth-child(2) > input")
+let inputFirst = document.querySelector("#MyTable > tbody > tr:nth-child("+ tableChild +") > td:nth-child(1) > input")
+console.log(inputFirst , 'input 1')
 
- len = x.rows.length;
-
-var maxweekvalue =  input.value 
-
-const week = $("#id_rel_ref_school_school_course-0-max_weak");
-var res= +maxweekvalue + 1;
-new_row.cells[0].innerHTML = res;
-
- //console.log(res,'value +1')
- var inp1 = new_row.cells[1].getElementsByTagName('input')[0];
-
- inp1.value = '';
-
-
- var inp2 = new_row.cells[2].getElementsByTagName('input')[0];
-
- inp2.id += len;
- inp2.value = '' ;
+    firstcol =  inputFirst.value
+   let fnum = Number(firstcol) //not work change value
  
- const tbody = document.querySelector('#MyTable > tbody');
- tbody.appendChild(new_row);
-tableChild++;
+    console.log(fnum ,'first col')
+
+          let input = document.querySelector("#MyTable > tbody > tr:nth-child("+ tableChild +") > td:nth-child(2) > input")
+       
+            len = x.rows.length;
+
+               var maxweekvalue =  input.value 
+               if(maxweekvalue > 0){
+                mybtn = document.querySelector("#btn_school_course").disabled = false
+               }
+console.log(maxweekvalue ,'input 2')
+                 let week = $("#max_weak_value").value;
+
+               //  console.log(week,'week value')
+                   var res= +maxweekvalue + 1;
+//console.log(res ,'res val')
+
+                     new_row.cells[1].value = res;
+                     week = res + fnum
+
+                     fnum = week - fnum
+                     updatevalue = fnum
+                     
+       console.log(fnum , 'fnum')
+
+        console.log(week,'value +1')
+                    var inp1 = new_row.cells[1].getElementsByTagName('input')[0];
+//console.log(inp1 , 'input 2')
+                    inp1.value = '';
+
+
+                    var inp2 = new_row.cells[2].getElementsByTagName('input')[0];
+//console.log(inp2 , 'input 3')
+                    inp2.id += len;
+                    inp2.value = '' ;
+                    
+                    const tbody = document.querySelector('#MyTable > tbody');
+                    tbody.appendChild(new_row);
+                    tableChild++;
 }
 
 
 ////////////////////////////////////////////////////////////////////////////////
 
-
-
-  
 
 
 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- time picker css-->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.min.css" integrity="sha256-SMGbWcp5wJOVXYlZJyAXqoVWaE/vgFA5xfrH3i/jVw0=" crossorigin="anonymous" />
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <title> ddate time Document</title>
+</head>
+<body>
+    <h3>date time </h3>
+    <div>
+        <input type="start-time" id="demo">
+        <input type="end-time" id="demo-2">
+    </div>
+
+    
+        
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!--  time picker js -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+
+
+
+<script>
+        
+    //time picker
+config ={
+enableTime: true,
+ noCalendar: true,
+ dateFormat: "H:i:S",
+ time_24hr: true
+}
+//start time
+flatpickr("input[type=start-time]", config);
+
+
+//end time
+flatpickr("input[type=end-time]", config);
+
+     
+     </script>
+</body>
+</html>
